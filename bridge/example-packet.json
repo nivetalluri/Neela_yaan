@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-09-08T05:10:40.923244+00:00",
+  "ocean": {
+    "temperature": 2.89287027983493,
+    "conductivity": 32.70461135441198,
+    "salinity": 34.20250146656548,
+    "pressure": 12.253558827820733,
+    "depth": 12.77606641558585,
+    "dissolved_oxygen": 8.974598707999993,
+    "ph": 8.11570858425336,
+    "current": 0.34325193445664853
+  },
+  "atmosphere": {
+    "air_temperature": -4.3115712117866885,
+    "pressure": 1008.7962951742669,
+    "humidity": 71.09827899166312,
+    "wind_speed": 12.815096858991675,
+    "wind_direction": 215.8642975543753
+  },
+  "navigation": {
+    "latitude": -64.821,
+    "longitude": 72.431,
+    "speed": 0.752234351280174,
+    "heading": 114.99342662819173,
+    "gps_fix": true,
+    "satellites": 9,
+    "accuracy": 2.4,
+    "gps_status": "ACTIVE"
+  },
+  "imu": {
+    "acc_x": 0.0,
+    "acc_y": 0.05,
+    "acc_z": 9.775710453892568,
+    "gyro_x": 0.01,
+    "gyro_y": 0.02,
+    "gyro_z": 0.04,
+    "pitch": 0.0,
+    "roll": 0.6
+  },
+  "waves": {
+    "height": 2.3906761276465645,
+    "period": 8.190516766104055,
+    "frequency": 0.12195121951219513
+  },
+  "power": {
+    "battery_percentage": 82.0,
+    "battery_voltage": 12.4,
+    "solar_power": 18.040822206538348,
+    "load_power": 7.8069261594707084
+  },
+  "communication": {
+    "gps_status": "FIX",
+    "satellite_status": "CONNECTED"
+  }
+}

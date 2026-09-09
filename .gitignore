@@ -1,0 +1,10 @@
+.env
+*.sqlite3*
+node_modules/
+.venv/
+__pycache__/
+.pio/
+.platformio/
+.cache/
+dist/
+*.log

@@ -1,0 +1,545 @@
+{
+  "$defs": {
+    "Atmosphere": {
+      "additionalProperties": false,
+      "properties": {
+        "air_temperature": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Air Temperature"
+        },
+        "pressure": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pressure"
+        },
+        "humidity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Humidity"
+        },
+        "wind_speed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wind Speed"
+        },
+        "wind_direction": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wind Direction"
+        }
+      },
+      "title": "Atmosphere",
+      "type": "object"
+    },
+    "Communication": {
+      "additionalProperties": false,
+      "properties": {
+        "gps_status": {
+          "default": "FIX",
+          "title": "Gps Status",
+          "type": "string"
+        },
+        "satellite_status": {
+          "default": "CONNECTED",
+          "enum": [
+            "CONNECTED",
+            "OFFLINE"
+          ],
+          "title": "Satellite Status",
+          "type": "string"
+        }
+      },
+      "title": "Communication",
+      "type": "object"
+    },
+    "Imu": {
+      "additionalProperties": false,
+      "properties": {
+        "acc_x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Acc X"
+        },
+        "acc_y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Acc Y"
+        },
+        "acc_z": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Acc Z"
+        },
+        "gyro_x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gyro X"
+        },
+        "gyro_y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gyro Y"
+        },
+        "gyro_z": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gyro Z"
+        },
+        "pitch": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pitch"
+        },
+        "roll": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Roll"
+        }
+      },
+      "title": "Imu",
+      "type": "object"
+    },
+    "MissionInput": {
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "default": "INITIALIZATION",
+          "title": "State",
+          "type": "string"
+        },
+        "ice_risk": {
+          "default": "LOW",
+          "title": "Ice Risk",
+          "type": "string"
+        }
+      },
+      "title": "MissionInput",
+      "type": "object"
+    },
+    "Navigation": {
+      "additionalProperties": false,
+      "properties": {
+        "latitude": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latitude"
+        },
+        "longitude": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Longitude"
+        },
+        "speed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Speed"
+        },
+        "heading": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Heading"
+        },
+        "gps_fix": {
+          "default": false,
+          "title": "Gps Fix",
+          "type": "boolean"
+        },
+        "satellites": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Satellites"
+        },
+        "accuracy": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accuracy"
+        },
+        "gps_status": {
+          "default": "ACTIVE",
+          "enum": [
+            "ACTIVE",
+            "SLEEP",
+            "RECOVERING",
+            "LOST"
+          ],
+          "title": "Gps Status",
+          "type": "string"
+        }
+      },
+      "title": "Navigation",
+      "type": "object"
+    },
+    "Ocean": {
+      "additionalProperties": false,
+      "properties": {
+        "temperature": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Temperature"
+        },
+        "conductivity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Conductivity"
+        },
+        "salinity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Salinity"
+        },
+        "pressure": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pressure"
+        },
+        "depth": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Depth"
+        },
+        "dissolved_oxygen": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dissolved Oxygen"
+        },
+        "ph": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ph"
+        },
+        "current": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Current"
+        }
+      },
+      "title": "Ocean",
+      "type": "object"
+    },
+    "Power": {
+      "additionalProperties": false,
+      "properties": {
+        "battery_percentage": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Battery Percentage"
+        },
+        "battery_voltage": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Battery Voltage"
+        },
+        "solar_power": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Solar Power"
+        },
+        "load_power": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Load Power"
+        }
+      },
+      "title": "Power",
+      "type": "object"
+    },
+    "Waves": {
+      "additionalProperties": false,
+      "properties": {
+        "height": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height"
+        },
+        "period": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Period"
+        },
+        "frequency": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frequency"
+        }
+      },
+      "title": "Waves",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "timestamp": {
+      "format": "date-time",
+      "title": "Timestamp",
+      "type": "string"
+    },
+    "ocean": {
+      "$ref": "#/$defs/Ocean"
+    },
+    "atmosphere": {
+      "$ref": "#/$defs/Atmosphere"
+    },
+    "navigation": {
+      "$ref": "#/$defs/Navigation"
+    },
+    "imu": {
+      "$ref": "#/$defs/Imu"
+    },
+    "waves": {
+      "$ref": "#/$defs/Waves"
+    },
+    "power": {
+      "$ref": "#/$defs/Power"
+    },
+    "communication": {
+      "$ref": "#/$defs/Communication"
+    },
+    "mission": {
+      "$ref": "#/$defs/MissionInput"
+    }
+  },
+  "required": [
+    "timestamp"
+  ],
+  "title": "Telemetry",
+  "type": "object"
+}
